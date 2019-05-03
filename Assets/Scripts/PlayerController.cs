@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckInput();
         Move();
 
     }
@@ -87,7 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = destination;
             isMoving = false;
-            anim.SetBool("isRunning", false);
+            CheckInput();
             if (canMove)
             {
                 destination = nextPosition;
@@ -96,6 +95,7 @@ public class PlayerController : MonoBehaviour
                 isMoving = true;
                 anim.SetBool("isRunning", true);
             }
+            else { anim.SetBool("isRunning", false); }
         }
     }
 }
