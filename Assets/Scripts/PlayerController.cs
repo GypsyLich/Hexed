@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     Vector3 destination, nextPosition, facingDirection;
     float speed = 2f;
     bool canMove, isMoving;
+    public Tilemap blockingLayer;
+    public Tile black;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -80,15 +84,15 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             transform.position = Vector2.MoveTowards(transform.position, destination, Time.deltaTime * speed);
-            Debug.Log(Vector2.Distance(destination, transform.position));
         }
         if (Vector2.Distance(destination, transform.position) <= 0.01f)
         {
             transform.position = destination;
             isMoving = false;
             CheckInput();
-            if (canMove)
+            if (canMove && blockingLayer.GetTile(new Vector3Int((int)(nextPosition.x - 0.5f), (int)nextPosition.y, 0)) == null)
             {
+
                 destination = nextPosition;
                 transform.eulerAngles = facingDirection;
                 canMove = false;
