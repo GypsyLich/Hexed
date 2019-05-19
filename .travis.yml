@@ -1,8 +1,31 @@
-language: objective-c
-before_install:
-- chmod a+x ./Travis/install.sh
-- chmod a+x ./Travis/build.sh
+# do not install anything extra onto the image
+language: generic
+
+# use a Mac OSX image
+os: osx
+
+# only run builds on pushes to the master branch
+branches:
+  only:
+  - master
+  - develop
+  - travis
+
+# send email notifications when the build changes from succeeding to broken
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+    
+# run the script to download and install Unity editor
 install:
-- ./Travis/install.sh
+- sudo -E sh ./Travis/install.sh
+
+# run the script for unit tests and builds
 script:
-- ./Travis/build.sh
+- sudo -E sh ./Travis/build.sh
+
+# environment variables used in bash scripts
+env:
+  global:
+  - UNITYCI_PROJECT_NAME="Hexed"
