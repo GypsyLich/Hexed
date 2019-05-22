@@ -8,8 +8,6 @@ os: osx
 branches:
   only:
   - master
-  - develop
-  - travis
 
 # send email notifications when the build changes from succeeding to broken
 notifications:
