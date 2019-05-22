@@ -1,27 +1,16 @@
 #! /bin/sh
 
-BASE_URL=download.unity3d.com/download_unity/
-HASH=6bac21139588
-VERSION=5.6.6f2
+echo 'Downloading Unity 2018.3.8 pkg:'
+curl --retry 5 -o Unity.pkg https://download.unity3d.com/download_unity/fc0fe30d6d91/MacEditorInstaller/Unity.pkg
+if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 
-download() {
-  file=$1
-  url="$BASE_URL/$HASH/$package"
 
-  echo "Downloading from $url: "
-  curl -o `basename "$package"` "$url"
-}
+##echo 'Downloading Unity 2018.3.8 Windows Build Support pkg:'
+##curl --retry 5 -o Unity_win.pkg https://download.unity3d.com/download_unity/fc0fe30d6d91/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-2018.3.8f1.pkg
+##if [ $? -ne 0 ]; then { echo "Download failed"; exit $?; } fi
 
-install() {
-  package=$1
-  download "$package"
-
-  echo "Installing "`basename "$package"`
-  sudo installer -dumplog -package `basename "$package"` -target /
-}
-
-# See $BASE_URL/$HASH/UnityDownloadAssistant-$VERSION-$PLATFORM.ini for complete list
-# of available packages, where PLATFORM is `osx` or `win`
-
-install "MacEditorInstaller/UnityDownloadAssistant-$VERSION.dmg"
-install "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION.pkg"
+# Run installer(s)
+echo 'Installing Unity.pkg'
+sudo installer -dumplog -package Unity.pkg -target /
+##echo 'Installing Unity_win.pkg'
+##sudo installer -dumplog -package Unity_win.pkg -target /
