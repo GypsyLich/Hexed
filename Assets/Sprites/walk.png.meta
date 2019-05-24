@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: f00f45a3f2b834b4596e00a958825774
+guid: 2ca165d64500ae14f888b4a8d28d1f49
 TextureImporter:
   fileIDToRecycleName:
-    21300000: buttle_mode_running_0
-    21300002: buttle_mode_running_1
-    21300004: buttle_mode_running_2
-    21300006: buttle_mode_running_3
-    21300008: buttle_mode_running_4
-    21300010: buttle_mode_running_5
-    21300012: buttle_mode_running_6
-    21300014: buttle_mode_running_7
-    21300016: buttle_mode_running_8
-    21300018: buttle_mode_running_9
-    21300020: buttle_mode_running_10
-    21300022: buttle_mode_running_11
-    21300024: buttle_mode_running_12
-    21300026: buttle_mode_running_13
-    21300028: buttle_mode_running_14
-    21300030: buttle_mode_running_15
-    21300032: buttle_mode_running_16
+    21300000: walk_0
+    21300002: walk_1
+    21300004: walk_2
+    21300006: walk_3
+    21300008: walk_4
+    21300010: walk_5
+    21300012: walk_6
+    21300014: walk_7
+    21300016: walk_8
+    21300018: walk_9
+    21300020: walk_10
+    21300022: walk_11
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -101,7 +96,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttle_mode_running_0
+      name: walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,13 +110,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242cb4ece8c75fe409358c9e80347258
+      spriteID: 21ced5d84bc8a1e4db92cdbbc42149f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_1
+      name: walk_1
       rect:
         serializedVersion: 2
         x: 64
@@ -135,13 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe6a0258f0e2004a99004dd2b7fdd4c
+      spriteID: c22b293bc363acc489e2c34ccf5f96e2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_2
+      name: walk_2
       rect:
         serializedVersion: 2
         x: 128
@@ -155,13 +150,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a34e30e86521f842a33c36c150656f4
+      spriteID: cd2f85889e45b8044951778e7eea04f4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_3
+      name: walk_3
       rect:
         serializedVersion: 2
         x: 192
@@ -175,13 +170,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa4df94a55d41a346a2096f90bb81eaa
+      spriteID: 699d3f331fd1d5848bfe1a436cce818a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_4
+      name: walk_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,13 +190,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e3f91520425dd14ba4902f1ab43d101
+      spriteID: bc85256b9039fe948a219c9de2a46a8d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_5
+      name: walk_5
       rect:
         serializedVersion: 2
         x: 320
@@ -215,13 +210,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abfae4b46d439ab44861666b335ae3b7
+      spriteID: d3fcbb04335601d4aadcc4fdf3024a72
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_6
+      name: walk_6
       rect:
         serializedVersion: 2
         x: 384
@@ -235,13 +230,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15c3fc61448c1a04dad4476a00c7f618
+      spriteID: 739a3b66513c63041b41d796dc9d30af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_7
+      name: walk_7
       rect:
         serializedVersion: 2
         x: 448
@@ -255,13 +250,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad574162b58d034aaaefbfc4844f46e
+      spriteID: 649ae702687772f4a982d75ca0709904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_8
+      name: walk_8
       rect:
         serializedVersion: 2
         x: 512
@@ -275,13 +270,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ae98e582fd762741a460f362181b608
+      spriteID: 176d433ed475d2447b4fcb6921251904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_9
+      name: walk_9
       rect:
         serializedVersion: 2
         x: 576
@@ -295,13 +290,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef883779a4fef9844a8170f09ec1859d
+      spriteID: 80944c5159e594e40bd9824353996b06
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_10
+      name: walk_10
       rect:
         serializedVersion: 2
         x: 640
@@ -315,13 +310,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e3a6b79ecfd24c46a01b3700425eed6
+      spriteID: 1caf3550a38d0a34a9d95deae8cc6ba9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttle_mode_running_11
+      name: walk_11
       rect:
         serializedVersion: 2
         x: 704
@@ -335,107 +330,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a2b69eeed191ce47b2e9c4ecac0e731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttle_mode_running_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f70a45d35f4b0f242af530e0e5d7843c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttle_mode_running_13
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd62dd89ade211e43aa49943cf05a539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttle_mode_running_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93450b7835b5185438576a1af6011fb4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttle_mode_running_15
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51f82089e9b987341bf3d909870cb2b1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttle_mode_running_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e431d71b8805804fa310d187e1badde
+      spriteID: 5a78bcc0ef2515c4883c8eeea33259d4
       vertices: []
       indices: 
       edges: []
@@ -443,7 +338,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3c0aa78c814008c4d80def4882cef545
+    spriteID: 871863f4189782d4293cd35a5a49e7a4
     vertices: []
     indices: 
     edges: []

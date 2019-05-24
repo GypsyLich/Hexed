@@ -74,10 +74,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -121,8 +121,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,7 +130,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c34ab7248cfbe39469d13c5f0995315f
+      spriteID: f20198372597a95469d9e96d4e8dd508
       vertices: []
       indices: 
       edges: []
@@ -139,10 +139,10 @@ TextureImporter:
       name: sword_draw_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0fa4137cb38c9a4cb2ed4293024b08d
+      spriteID: c8e0a8b1abbd0c94a8fe20e1a9e6b0dd
       vertices: []
       indices: 
       edges: []
@@ -159,10 +159,10 @@ TextureImporter:
       name: sword_draw_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,7 +170,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fff54311cd24e6e44965b9b98b5e0e7c
+      spriteID: 6a4f876586225d84bac426e419656a74
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       name: sword_draw_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 894629ffff4bf6f4d93229b34d6dfcde
+      spriteID: c37433ea823e2c14ca0193ff70a192a8
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
       name: sword_draw_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1132008c9f836458354019172a8ade
+      spriteID: 7db3ed239e5377641b82335748bb95be
       vertices: []
       indices: 
       edges: []
@@ -219,10 +219,10 @@ TextureImporter:
       name: sword_draw_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 320
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,7 +230,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d2700a1c39fc340854b3db04d1a9bf
+      spriteID: 249b173f1dfe5df45aa4e4af956d3ca2
       vertices: []
       indices: 
       edges: []
@@ -239,10 +239,10 @@ TextureImporter:
       name: sword_draw_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 384
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89dab2166964ad34eb68a71d66168ab7
+      spriteID: e6949e383c70cdb4f80c5ab8a8eaf34d
       vertices: []
       indices: 
       edges: []
@@ -259,10 +259,10 @@ TextureImporter:
       name: sword_draw_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 448
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,7 +270,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e3adea5029bb7469ae0346b2d213e9
+      spriteID: c438e2430da64bf4caa07218d9a3b05f
       vertices: []
       indices: 
       edges: []
@@ -279,10 +279,10 @@ TextureImporter:
       name: sword_draw_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 512
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,7 +290,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e424dfe7e045e8146b903c9b2644a743
+      spriteID: 09101bcac2abc334390d269e95d5bc8c
       vertices: []
       indices: 
       edges: []
@@ -299,10 +299,10 @@ TextureImporter:
       name: sword_draw_9
       rect:
         serializedVersion: 2
-        x: 288
+        x: 576
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,7 +310,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ffc7d77be48fcc46934c5d3c044e5e7
+      spriteID: ff4fc20656364004a8c502f6c589c1ec
       vertices: []
       indices: 
       edges: []
@@ -319,10 +319,10 @@ TextureImporter:
       name: sword_draw_10
       rect:
         serializedVersion: 2
-        x: 320
+        x: 640
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,7 +330,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb19ed759058e7b46b3818dd33b17955
+      spriteID: ca47caee9c2a97f48aa0aeb6d56bcabb
       vertices: []
       indices: 
       edges: []
@@ -339,10 +339,10 @@ TextureImporter:
       name: sword_draw_11
       rect:
         serializedVersion: 2
-        x: 352
+        x: 704
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,7 +350,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c32ac4d38a9b60947a17806d210a67ef
+      spriteID: 1d6b3261cfd5f1443a469eeee96ce5bf
       vertices: []
       indices: 
       edges: []
@@ -359,10 +359,10 @@ TextureImporter:
       name: sword_draw_12
       rect:
         serializedVersion: 2
-        x: 384
+        x: 768
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,7 +370,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7dc92ff81a7b244c985b764868494c9
+      spriteID: f1c8881d821ce0a4ba15c1c964d3b7e2
       vertices: []
       indices: 
       edges: []
@@ -379,10 +379,10 @@ TextureImporter:
       name: sword_draw_13
       rect:
         serializedVersion: 2
-        x: 416
+        x: 832
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,7 +390,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 356a0794fa585fe4f98f8df3943c99d5
+      spriteID: 2bf84b705c2203547ba7da03eb3b1a1f
       vertices: []
       indices: 
       edges: []
@@ -399,10 +399,10 @@ TextureImporter:
       name: sword_draw_14
       rect:
         serializedVersion: 2
-        x: 448
+        x: 896
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,7 +410,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acdf92aff7d5c524f9409b867e5369bb
+      spriteID: 3c49788a6a5b2da41b2ed55154df9a46
       vertices: []
       indices: 
       edges: []
@@ -419,10 +419,10 @@ TextureImporter:
       name: sword_draw_15
       rect:
         serializedVersion: 2
-        x: 480
+        x: 960
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,7 +430,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ec877efa28f4704aa156206aa4eb425
+      spriteID: 0ce5db3a118466b438cef756cf9dc12e
       vertices: []
       indices: 
       edges: []
@@ -439,10 +439,10 @@ TextureImporter:
       name: sword_draw_16
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1024
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,7 +450,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9370842a45d0eb74391707b6f43653ac
+      spriteID: c56b9f9659b120a44a6867ba8ef979e9
       vertices: []
       indices: 
       edges: []
@@ -459,10 +459,10 @@ TextureImporter:
       name: sword_draw_17
       rect:
         serializedVersion: 2
-        x: 544
+        x: 1088
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,7 +470,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de939761d3d5770429a7d02ca0bd06bf
+      spriteID: 15778241261f08841bc3042d9ca0bd06
       vertices: []
       indices: 
       edges: []
@@ -479,10 +479,10 @@ TextureImporter:
       name: sword_draw_18
       rect:
         serializedVersion: 2
-        x: 576
+        x: 1152
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,7 +490,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 053c0b91640380449a51142c0ae43c28
+      spriteID: a7d26f81a3822994eab6e6b937b74399
       vertices: []
       indices: 
       edges: []
@@ -499,10 +499,10 @@ TextureImporter:
       name: sword_draw_19
       rect:
         serializedVersion: 2
-        x: 608
+        x: 1216
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,7 +510,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ef6d93a117dc534d864fefdd510df23
+      spriteID: 1ecf35db1e9791f408bfec6f51a30d57
       vertices: []
       indices: 
       edges: []
@@ -519,10 +519,10 @@ TextureImporter:
       name: sword_draw_20
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1280
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,7 +530,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3e88fc1262ad14e92759dd58616b25
+      spriteID: 9463bcf280ba3e44d8d430a9ae8aa355
       vertices: []
       indices: 
       edges: []
@@ -539,10 +539,10 @@ TextureImporter:
       name: sword_draw_21
       rect:
         serializedVersion: 2
-        x: 672
+        x: 1344
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,7 +550,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbe724d8373dfc4886edf93296c988b
+      spriteID: fb97e406c20229e4fb81274a61165c51
       vertices: []
       indices: 
       edges: []
@@ -559,10 +559,10 @@ TextureImporter:
       name: sword_draw_22
       rect:
         serializedVersion: 2
-        x: 704
+        x: 1408
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,7 +570,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd24deb9b92985947aab90c6f1455ff3
+      spriteID: 940d9845289099a4a9c8cb0b59da238d
       vertices: []
       indices: 
       edges: []
@@ -579,10 +579,10 @@ TextureImporter:
       name: sword_draw_23
       rect:
         serializedVersion: 2
-        x: 736
+        x: 1472
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,7 +590,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 004522e401dd200468410a67c7f4db92
+      spriteID: 5bcbcb0fbbe44f841bd368c03b46e579
       vertices: []
       indices: 
       edges: []
@@ -599,10 +599,10 @@ TextureImporter:
       name: sword_draw_24
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1536
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -610,7 +610,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314c5c51bd033e64898f455442514c0e
+      spriteID: a956f57ca54f4ce4286347679e4c56b3
       vertices: []
       indices: 
       edges: []
@@ -619,10 +619,10 @@ TextureImporter:
       name: sword_draw_25
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1600
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,7 +630,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a674d354bf6e6f43bcc302ece1b3834
+      spriteID: 34f48c9b03f66ef4b8b3cb9884d71930
       vertices: []
       indices: 
       edges: []
@@ -639,10 +639,10 @@ TextureImporter:
       name: sword_draw_26
       rect:
         serializedVersion: 2
-        x: 832
+        x: 1664
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,7 +650,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d374a715a8ec4754eac8c61def5329d3
+      spriteID: 7c6feea6d41a45c4faab5313e5c11324
       vertices: []
       indices: 
       edges: []
@@ -659,10 +659,10 @@ TextureImporter:
       name: sword_draw_27
       rect:
         serializedVersion: 2
-        x: 864
+        x: 1728
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,7 +670,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aff536c8e35b9ca4db669b813b4702d3
+      spriteID: 0bf776c6815a95044a60f117fbf1464d
       vertices: []
       indices: 
       edges: []
@@ -679,10 +679,10 @@ TextureImporter:
       name: sword_draw_28
       rect:
         serializedVersion: 2
-        x: 896
+        x: 1792
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,7 +690,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b249d512c034144a88e0f46bc1c2d55
+      spriteID: 0a70edc0cfe827f4c81c2eb05b844276
       vertices: []
       indices: 
       edges: []
@@ -699,10 +699,10 @@ TextureImporter:
       name: sword_draw_29
       rect:
         serializedVersion: 2
-        x: 928
+        x: 1856
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,7 +710,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 484db9006a925fa43b88680194184bc5
+      spriteID: 1775d8ff05ce8b948adcfc8d636ecb67
       vertices: []
       indices: 
       edges: []
@@ -719,10 +719,10 @@ TextureImporter:
       name: sword_draw_30
       rect:
         serializedVersion: 2
-        x: 960
+        x: 1920
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,7 +730,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de9dcb6a53872734082238af5ed862df
+      spriteID: 867e7c3d3369c9744975a065813aebff
       vertices: []
       indices: 
       edges: []
@@ -739,10 +739,10 @@ TextureImporter:
       name: sword_draw_31
       rect:
         serializedVersion: 2
-        x: 992
+        x: 1984
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,7 +750,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d753b1f63b55d214082b8260286d7f21
+      spriteID: 6ab8cc0343b9bdf46ba655d6e5cccadd
       vertices: []
       indices: 
       edges: []
@@ -758,7 +758,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0d7dda7a6bfaa2444984c47a3fece46d
+    spriteID: e419e49d2fc33d9458c5e3ad4e755962
     vertices: []
     indices: 
     edges: []
