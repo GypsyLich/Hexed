@@ -1,26 +1,24 @@
 fileFormatVersion: 2
-guid: aad47e3543e73ba4a82108d2fb7297f8
+guid: f00f45a3f2b834b4596e00a958825774
 TextureImporter:
   fileIDToRecycleName:
-    21300000: running_0
-    21300002: running_1
-    21300004: running_2
-    21300006: running_3
-    21300008: running_4
-    21300010: running_5
-    21300012: running_6
-    21300014: running_7
-    21300016: running_8
-    21300018: running_9
-    21300020: running_10
-    21300022: running_11
-    21300024: running_12
-    21300026: running_13
-    21300028: running_14
-    21300030: running_15
-    21300032: running_16
-    21300034: running_17
-    21300036: running_18
+    21300000: buttle_mode_running_0
+    21300002: buttle_mode_running_1
+    21300004: buttle_mode_running_2
+    21300006: buttle_mode_running_3
+    21300008: buttle_mode_running_4
+    21300010: buttle_mode_running_5
+    21300012: buttle_mode_running_6
+    21300014: buttle_mode_running_7
+    21300016: buttle_mode_running_8
+    21300018: buttle_mode_running_9
+    21300020: buttle_mode_running_10
+    21300022: buttle_mode_running_11
+    21300024: buttle_mode_running_12
+    21300026: buttle_mode_running_13
+    21300028: buttle_mode_running_14
+    21300030: buttle_mode_running_15
+    21300032: buttle_mode_running_16
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -61,7 +59,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -82,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,18 +90,18 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureFormat: 4
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: running_0
+      name: buttle_mode_running_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,13 +115,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e48923a044a9ff489b5cd1e7aa6beca
+      spriteID: 242cb4ece8c75fe409358c9e80347258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_1
+      name: buttle_mode_running_1
       rect:
         serializedVersion: 2
         x: 64
@@ -137,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 906489c1d9794d74885a72d4a1414a39
+      spriteID: dfe6a0258f0e2004a99004dd2b7fdd4c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_2
+      name: buttle_mode_running_2
       rect:
         serializedVersion: 2
         x: 128
@@ -157,13 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a3252f59e4fd544a8327304ee973a15
+      spriteID: 9a34e30e86521f842a33c36c150656f4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_3
+      name: buttle_mode_running_3
       rect:
         serializedVersion: 2
         x: 192
@@ -177,13 +175,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d39e5acce305a74aaf0ff34d4773dd1
+      spriteID: aa4df94a55d41a346a2096f90bb81eaa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_4
+      name: buttle_mode_running_4
       rect:
         serializedVersion: 2
         x: 256
@@ -197,13 +195,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de7a275eccc6a554b8fcae3301710081
+      spriteID: 7e3f91520425dd14ba4902f1ab43d101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_5
+      name: buttle_mode_running_5
       rect:
         serializedVersion: 2
         x: 320
@@ -217,13 +215,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a74e766a9676294da2483ece3ff4948
+      spriteID: abfae4b46d439ab44861666b335ae3b7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_6
+      name: buttle_mode_running_6
       rect:
         serializedVersion: 2
         x: 384
@@ -237,13 +235,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a5e0ea29265ae44baade76cf14f0461
+      spriteID: 15c3fc61448c1a04dad4476a00c7f618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_7
+      name: buttle_mode_running_7
       rect:
         serializedVersion: 2
         x: 448
@@ -257,13 +255,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 994fcbfae18f5c649b6fbb530ce41315
+      spriteID: 1ad574162b58d034aaaefbfc4844f46e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_8
+      name: buttle_mode_running_8
       rect:
         serializedVersion: 2
         x: 512
@@ -277,13 +275,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e8f9ca475ec26247b6e2e015ac1b64d
+      spriteID: 3ae98e582fd762741a460f362181b608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_9
+      name: buttle_mode_running_9
       rect:
         serializedVersion: 2
         x: 576
@@ -297,13 +295,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05abd28ab81060546bac922a9d2128fe
+      spriteID: ef883779a4fef9844a8170f09ec1859d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_10
+      name: buttle_mode_running_10
       rect:
         serializedVersion: 2
         x: 640
@@ -317,13 +315,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56b982d35c8c87e4090f3ebc0b04bf7a
+      spriteID: 2e3a6b79ecfd24c46a01b3700425eed6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_11
+      name: buttle_mode_running_11
       rect:
         serializedVersion: 2
         x: 704
@@ -337,13 +335,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f109880529dae7b40a7aa6004f96fee9
+      spriteID: 8a2b69eeed191ce47b2e9c4ecac0e731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_12
+      name: buttle_mode_running_12
       rect:
         serializedVersion: 2
         x: 768
@@ -357,13 +355,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 506f770147355e440b79d6612ebca7f0
+      spriteID: f70a45d35f4b0f242af530e0e5d7843c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_13
+      name: buttle_mode_running_13
       rect:
         serializedVersion: 2
         x: 832
@@ -377,13 +375,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1144c41c73206e2408b07658b50af88b
+      spriteID: dd62dd89ade211e43aa49943cf05a539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_14
+      name: buttle_mode_running_14
       rect:
         serializedVersion: 2
         x: 896
@@ -397,13 +395,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafe0ef4594d43f48bf2d8a59dca435b
+      spriteID: 93450b7835b5185438576a1af6011fb4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_15
+      name: buttle_mode_running_15
       rect:
         serializedVersion: 2
         x: 960
@@ -417,13 +415,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b1c43dd949311e47badc85b197b3315
+      spriteID: 51f82089e9b987341bf3d909870cb2b1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_16
+      name: buttle_mode_running_16
       rect:
         serializedVersion: 2
         x: 1024
@@ -437,47 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa2c46ff985011c4b90a025272c45334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea3581c644de9c14bb41a1abd53f9a8a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: running_18
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2fde59390c9f484c84dfab659fc4ca2
+      spriteID: 2e431d71b8805804fa310d187e1badde
       vertices: []
       indices: 
       edges: []
@@ -485,7 +443,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4b767ae13db768a41b3f7c50dbf22d40
+    spriteID: 3c0aa78c814008c4d80def4882cef545
     vertices: []
     indices: 
     edges: []

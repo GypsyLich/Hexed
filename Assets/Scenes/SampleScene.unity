@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockingLayer: {fileID: 1337193202}
-  black: {fileID: 11400000, guid: 4025d26d230cfbc4bb35b527a8da661e, type: 2}
 --- !u!212 &48702771
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -185,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b30c778335a75ff4c9ccbc3f4a25de2d, type: 3}
+  m_Sprite: {fileID: 21300002, guid: ade15cc6c33978e4097f78c5dfbcc1ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9497,7 +9496,7 @@ PrefabInstance:
     - target: {fileID: 8961388588012278383, guid: 4ea3ab13563faae4fa8a9e3c39c13fa3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8961388588012278383, guid: 4ea3ab13563faae4fa8a9e3c39c13fa3,
         type: 3}
