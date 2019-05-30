@@ -83,6 +83,34 @@ public class LevelGenerator : MonoBehaviour
         GenerateСrossRoadAndRoad(ref mapScheme, startX, startY, 1, ref crossRoad, ref roadX);
         // Создание дороги рядом с финишом
         GenerateСrossRoadAndRoad(ref mapScheme, finishX, finishY, 1, ref crossRoad, ref roadX);
+        // Путь от входа до выхода
+        GeneratePathFromEntryToExit(ref mapScheme, ref crossRoad, ref roadX);
+    }
+
+    // Путь от входа до выхода
+    void GeneratePathFromEntryToExit(ref int[,] mapScheme, ref int[] crossRoad, ref int roadX)
+    {
+        // Создание перекрестков
+        for (int m = 1; m < rooms - 1; m++)
+        {
+            crossRoad[m] = Random.Range(0, rooms - 1) * 2 + 2;
+            mapScheme[crossRoad[m], m * 2 + 2] = 1;
+        }
+
+        // Прокладываем путь к основным перекресткам
+        for (int m = rooms - 2; m >= 0; m--)
+        {
+            while (roadX != crossRoad[m])
+            {
+                roadX += roadX > crossRoad[m] ? -1 : 1;
+                mapScheme[roadX, m * 2 + 2] = 1;
+            }
+            if (m > 0)
+            {
+                mapScheme[roadX, m * 2 + 1] = 1;
+                mapScheme[roadX, m * 2] = 1;
+            }
+        }
     }
 
     // Создание перекрестка и дороги рядом с комнатой
