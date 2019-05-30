@@ -466,6 +466,8 @@ public class LevelGenerator : MonoBehaviour
     {
         // Заполнение карты полом
         GroundMap(mapSize);
+        // Создание границ карты
+        CreateMapBorder(map, mapSize);
     }
 
     // Заполнение карты полом
@@ -476,6 +478,30 @@ public class LevelGenerator : MonoBehaviour
             for (int y = 0; y < mapSize; y++)
             {
                 groundLayer.SetTile(new Vector3Int(x, y, 0), floorTile);
+            }
+        }
+    }
+
+    // Создание границ карты
+    void CreateMapBorder(int[,] map, int mapSize)
+    {
+        for (int x = 0; x < mapSize + 10; x++)
+        {
+            for (int y = 1; y < 10 + 1; y++)
+            {
+                blockingLayer.SetTile(new Vector3Int(x, -y, 0), roofWallTile);
+                blockingLayer.SetTile(new Vector3Int(x - 10, mapSize + y - 1, 0), roofWallTile); // Верхняя и нижняя стена карты
+
+                blockingLayer.SetTile(new Vector3Int(-y, x - 10, 0), roofWallTile);
+                blockingLayer.SetTile(new Vector3Int(mapSize + y - 1, x, 0), roofWallTile); // Левая и правая стена карты
+            }
+        }
+
+        for (int x = 0; x < mapSize; x++)
+        {
+            if (map[x, mapSize - 1] == 0)
+            {
+                blockingLayer.SetTile(new Vector3Int(x, mapSize, 0), sideWallTile);
             }
         }
     }
