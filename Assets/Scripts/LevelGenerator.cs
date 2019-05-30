@@ -85,8 +85,77 @@ public class LevelGenerator : MonoBehaviour
     // Заполнение карты Tiles
     void GenerateMap(ref int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
     {
+        // Добавление сундуков и противников
+        GenerateObjects(mapScheme, ref map, mapSize, mapSchemeSize);
         // Заполнение комнат
         GenerateRooms(ref mapScheme, ref map, mapSize, mapSchemeSize);
+    }
+
+    // Добавление сундуков и противников
+    void GenerateObjects(int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
+    {
+        int monsters = 0;
+        int chests = 0;
+        int i, j, offsetX, offsetY, x, y;
+        while (monsters < monstersPerLevel)
+        {
+            i = Random.Range(1, mapSchemeSize + 1);
+            j = Random.Range(1, mapSchemeSize + 1);
+            if (mapScheme[i, j] == 0)
+            {
+                while (true)
+                {
+                    offsetX = Random.Range(0, sizeOfRoom - 1);
+                    offsetY = Random.Range(0, sizeOfRoom - 1);
+                    x = SetOffset(i, 0) + offsetX;
+                    y = SetOffset(j, 0) + offsetY;
+                    if (map[x, y] == 0)
+                    {
+                        int k = Random.Range(1, 4);
+                        switch (k)
+                        {
+                            case 1:
+                                map[x, y] = (int)Content.Enemy1;
+                                break;
+                            case 2:
+                                map[x, y] = (int)Content.Enemy2;
+                                break;
+                            case 3:
+                                map[x, y] = (int)Content.Enemy3;
+                                break;
+                            default:
+                                break;
+                        }
+                        monsters++;
+                        break;
+                    }
+                }
+            }
+        }
+        while (chests < chestsPerLevel)
+        {
+            i = Random.Range(1, mapSchemeSize + 1);
+            j = Random.Range(1, mapSchemeSize + 1);
+            if (mapScheme[i, j] == 0)
+            {
+                while (true)
+                {
+                    offsetX = Random.Range(1, sizeOfRoom - 2);
+                    offsetY = Random.Range(1, sizeOfRoom - 2);
+                    x = ((i / 2) * sizeOfRoom) + ((i / 2) * sizeOfRoad) + offsetX;
+                    y = ((j / 2) * sizeOfRoom) + ((j / 2) * sizeOfRoad) + offsetY;
+                    if (map[x, y] == 0 && map[x + 1, y] == 0 && map[x, y + 1] == 0 && map[x + 1, y + 1] == 0)
+                    {
+                        map[x, y] = (int)Content.ChestTile1;
+                        map[x, y + 1] = (int)Content.ChestTile2;
+                        map[x + 1, y] = (int)Content.ChestTile4;
+                        map[x + 1, y + 1] = (int)Content.ChestTile3;
+                        chests++;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     // Заполнение комнат
