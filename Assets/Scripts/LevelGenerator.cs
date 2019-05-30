@@ -41,6 +41,8 @@ public class LevelGenerator : MonoBehaviour
     public Tile chestTile3;
     public Tile chestTile4;
 
+    public Transform Player;
+
     enum Content
     {
         Floor = 0,
@@ -468,6 +470,8 @@ public class LevelGenerator : MonoBehaviour
         GroundMap(mapSize);
         // Создание границ карты
         CreateMapBorder(map, mapSize);
+        // Заполнение объектами
+        RenderObjects(map, mapSize);
     }
 
     // Заполнение карты полом
@@ -502,6 +506,68 @@ public class LevelGenerator : MonoBehaviour
             if (map[x, mapSize - 1] == 0)
             {
                 blockingLayer.SetTile(new Vector3Int(x, mapSize, 0), sideWallTile);
+            }
+        }
+    }
+
+    // Заполнение объектами
+    void RenderObjects(int[,] map, int mapSize)
+    {
+        for (int x = 0; x < mapSize; x++)
+        {
+            for (int y = 0; y < mapSize; y++)
+            {
+                switch (map[x, y])
+                {
+                    case (int)Content.Floor:
+                        continue;
+                    case (int)Content.RoofWall:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), roofWallTile);
+                        break;
+                    case (int)Content.SideWall:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), sideWallTile);
+                        break;
+                    case (int)Content.ChestTile1:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile1);
+                        break;
+                    case (int)Content.ChestTile2:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile2);
+                        break;
+                    case (int)Content.ChestTile3:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile3);
+                        break;
+                    case (int)Content.ChestTile4:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile4);
+                        break;
+                    case (int)Content.Enemy1:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile1);
+                        break;
+                    case (int)Content.Enemy2:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile2);
+                        break;
+                    case (int)Content.Enemy3:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile3);
+                        break;
+                    case (int)Content.Player:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        break;
+                    case (int)Content.EntryTilemap:
+                        entryDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.PlayerAndEntryTilemap:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        entryDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.ExitTilemap:
+                        exitDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.PlayerAndExitTilemap:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        exitDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
