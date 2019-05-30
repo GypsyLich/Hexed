@@ -67,6 +67,19 @@ public class LevelGenerator : MonoBehaviour
         PlayerAndExitTilemap = 66,
     }
 
+    public void Construct(int _rooms, int _sizeOfRoom, int _sizeOfRoad, int _monstersPerLevel, int _chestsPerLevel,
+        int _percentageOfWallsInRooms, int _percentageOfWallsInRoads, int _percentageOfWallsInBorderOfRooms)
+    {
+        rooms = _rooms;
+        sizeOfRoom = _sizeOfRoom;
+        sizeOfRoad = _sizeOfRoad;
+        monstersPerLevel = _monstersPerLevel;
+        chestsPerLevel = _chestsPerLevel;
+        percentageOfWallsInRooms = _percentageOfWallsInRooms;
+        percentageOfWallsInRoads = _percentageOfWallsInRoads;
+        percentageOfWallsInBorderOfRooms = _percentageOfWallsInBorderOfRooms;
+    }
+
     void Start()
     {
         int mapSize = rooms * sizeOfRoom + (rooms - 1) * sizeOfRoad;
@@ -82,15 +95,23 @@ public class LevelGenerator : MonoBehaviour
     {
 
     }
-
-    int SetOffset(int i, int delta)
+    
+    public int SetOffset(int i, int delta)
     {
         return (((i / 2) + delta) * sizeOfRoom) + ((i / 2) * sizeOfRoad);
     }
 
     void GenerateLevel(ref int[,] map, int mapSize)
     {
-        int mapSchemeSize = rooms * 2 - 1;
+        int mapSchemeSize;
+        if (rooms == 1)
+        {
+            mapSchemeSize = 2 * 2 - 1;
+        }
+        else
+        {
+            mapSchemeSize = rooms * 2 - 1;
+        }
         int[,] mapScheme = new int[mapSchemeSize + 2, mapSchemeSize + 2];
 
         // Генерация схемы карты
@@ -100,7 +121,7 @@ public class LevelGenerator : MonoBehaviour
         // Добавление "боковых" стен
         AddSideWalls(ref map, mapSize);
     }
-    
+
     // Заполнение карты Tiles
     void GenerateMap(ref int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
     {
@@ -111,11 +132,44 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Добавление сундуков и противников
-    void GenerateObjects(int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
+    public void GenerateObjects(int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
     {
         int monsters = 0;
         int chests = 0;
         int i, j, offsetX, offsetY, x, y;
+        if (chestsPerLevel * 16 > Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2))
+        {
+            chests = chestsPerLevel - (int)Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2) / 16;
+        }
+        while (chests < chestsPerLevel)
+        {
+            i = Random.Range(1, mapSchemeSize + 1);
+            j = Random.Range(1, mapSchemeSize + 1);
+            if (mapScheme[i, j] == 0)
+            {
+                for (int k = 0; k < 100; k++)
+                {
+                    offsetX = Random.Range(1, sizeOfRoom - 2);
+                    offsetY = Random.Range(1, sizeOfRoom - 2);
+                    x = SetOffset(i, 0) + offsetX;
+                    y = SetOffset(j, 0) + offsetY;
+                    if (map[x, y] == 0 && map[x + 1, y] == 0 && map[x, y + 1] == 0 && map[x + 1, y + 1] == 0)
+                    {
+                        map[x, y] = (int)Content.ChestTile1;
+                        map[x, y + 1] = (int)Content.ChestTile2;
+                        map[x + 1, y] = (int)Content.ChestTile4;
+                        map[x + 1, y + 1] = (int)Content.ChestTile3;
+                        chests++;
+                        break;
+                    }
+                }
+            }
+        }
+        if (monstersPerLevel + (int)Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2) / 4 > Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2) ||
+            (monstersPerLevel + chestsPerLevel * 16 > Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2) && chestsPerLevel * 16 <= Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2)))
+        {
+            monsters = monstersPerLevel - (int)Mathf.Pow((mapSchemeSize + 1) / 2 * (sizeOfRoom - 2), 2) / 4;
+        }
         while (monsters < monstersPerLevel)
         {
             i = Random.Range(1, mapSchemeSize + 1);
@@ -146,30 +200,6 @@ public class LevelGenerator : MonoBehaviour
                                 break;
                         }
                         monsters++;
-                        break;
-                    }
-                }
-            }
-        }
-        while (chests < chestsPerLevel)
-        {
-            i = Random.Range(1, mapSchemeSize + 1);
-            j = Random.Range(1, mapSchemeSize + 1);
-            if (mapScheme[i, j] == 0)
-            {
-                while (true)
-                {
-                    offsetX = Random.Range(1, sizeOfRoom - 2);
-                    offsetY = Random.Range(1, sizeOfRoom - 2);
-                    x = ((i / 2) * sizeOfRoom) + ((i / 2) * sizeOfRoad) + offsetX;
-                    y = ((j / 2) * sizeOfRoom) + ((j / 2) * sizeOfRoad) + offsetY;
-                    if (map[x, y] == 0 && map[x + 1, y] == 0 && map[x, y + 1] == 0 && map[x + 1, y + 1] == 0)
-                    {
-                        map[x, y] = (int)Content.ChestTile1;
-                        map[x, y + 1] = (int)Content.ChestTile2;
-                        map[x + 1, y] = (int)Content.ChestTile4;
-                        map[x + 1, y + 1] = (int)Content.ChestTile3;
-                        chests++;
                         break;
                     }
                 }
@@ -238,7 +268,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Добавление "боковых" стен
-    void AddSideWalls(ref int[,] map, int mapSize)
+    public void AddSideWalls(ref int[,] map, int mapSize)
     {
         for (int x = 0; x < mapSize; x++)
         {
@@ -328,7 +358,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Генерация схемы карты
-    void MapPlan(ref int[,] mapScheme)
+    public void MapPlan(ref int[,] mapScheme)
     {
         // Создание границ схемы карты
         MapSchemesBorder(ref mapScheme);
@@ -337,7 +367,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Создание границ схемы карты
-    void MapSchemesBorder(ref int[,] mapScheme)
+    public void MapSchemesBorder(ref int[,] mapScheme)
     {
         for (int i = 0; i < (int)Mathf.Sqrt(mapScheme.Length); i++)
         {
@@ -349,7 +379,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Создание стартовой и финишной комнаты и проложения между ними дороги
-    void EntryAndExitGeneration(ref int[,] mapScheme)
+    public void EntryAndExitGeneration(ref int[,] mapScheme)
     {
         int finishX = Random.Range(0, rooms) * 2 + 1, finishY = 1; // Координаты X и Y для начальной и конечной комнаты
         int startX = Random.Range(0, rooms) * 2 + 1, startY = rooms * 2 - 1;
@@ -396,7 +426,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     // Создание перекрестка и дороги рядом с комнатой
-    void GenerateСrossRoadAndRoad(ref int[,] mapScheme, int x, int y, int number, ref int[] crossRoad, ref int roadX)
+    public void GenerateСrossRoadAndRoad(ref int[,] mapScheme, int x, int y, int number, ref int[] crossRoad, ref int roadX)
     {
         int road;
         road = Random.Range(0, 4); // Создание перекрестка рядом с комнотой
