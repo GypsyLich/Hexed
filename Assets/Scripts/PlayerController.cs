@@ -47,19 +47,6 @@ public class PlayerController : MonoBehaviour
     void CheckForNewInput()
     {
 
-        if (Input.GetButtonDown("BM"))
-        {
-            switch (anim.GetBool("Battle_mode"))
-            {
-                case true:
-                    anim.SetBool("Battle_mode", false);
-                    break;
-                case false:
-                    anim.SetBool("Battle_mode", true);
-                    break;
-            }
-        }
-
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = 3 * Input.GetAxisRaw("Vertical");
         vectorOfMovement = verticalMove + horizontalMove;
@@ -70,7 +57,26 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("isRunning", false);
+
+            if (Input.GetButtonDown("BM"))
+            {
+                switch (anim.GetBool("battle_mode"))
+                {
+                    case true:
+                        anim.SetBool("battle_mode", false);
+                        break;
+                    case false:
+                        anim.SetBool("battle_mode", true);
+                        break;
+                }
+            }
+
+            if (Input.GetButtonDown("Attack") && anim.GetBool("battle_mode"))
+            {
+                anim.SetTrigger("attack");
+            }
         }
+
     }
 
     bool CanMove(Vector2 nextPosition)
