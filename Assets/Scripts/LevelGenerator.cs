@@ -28,6 +28,21 @@ public class LevelGenerator : MonoBehaviour
     public Tilemap entryDecorationsLayer;
     public Tilemap exitDecorationsLayer;
 
+    public Tile floorTile;
+    public Tile sideWallTile;
+    public Tile roofWallTile;
+
+    public Tile enemyTile1;
+    public Tile enemyTile2;
+    public Tile enemyTile3;
+
+    public Tile chestTile1;
+    public Tile chestTile2;
+    public Tile chestTile3;
+    public Tile chestTile4;
+
+    public Transform Player;
+
     enum Content
     {
         Floor = 0,
@@ -59,6 +74,8 @@ public class LevelGenerator : MonoBehaviour
         map = new int[mapSize, mapSize];
         // 
         GenerateLevel(ref map, mapSize);
+        // Воспроизведение карты
+        RenderMap(map, mapSize);
     }
 
     void Update()
@@ -443,6 +460,115 @@ public class LevelGenerator : MonoBehaviour
         if (number == 1 && y != 1)
         {
             roadX = x + deltaX;
+        }
+    }
+
+    // Воспроизведение карты
+    void RenderMap(int[,] map, int mapSize)
+    {
+        // Заполнение карты полом
+        GroundMap(mapSize);
+        // Создание границ карты
+        CreateMapBorder(map, mapSize);
+        // Заполнение объектами
+        RenderObjects(map, mapSize);
+    }
+
+    // Заполнение карты полом
+    void GroundMap(int mapSize)
+    {
+        for (int x = 0; x < mapSize; x++)
+        {
+            for (int y = 0; y < mapSize; y++)
+            {
+                groundLayer.SetTile(new Vector3Int(x, y, 0), floorTile);
+            }
+        }
+    }
+
+    // Создание границ карты
+    void CreateMapBorder(int[,] map, int mapSize)
+    {
+        for (int x = 0; x < mapSize + 10; x++)
+        {
+            for (int y = 1; y < 10 + 1; y++)
+            {
+                blockingLayer.SetTile(new Vector3Int(x, -y, 0), roofWallTile);
+                blockingLayer.SetTile(new Vector3Int(x - 10, mapSize + y - 1, 0), roofWallTile); // Верхняя и нижняя стена карты
+
+                blockingLayer.SetTile(new Vector3Int(-y, x - 10, 0), roofWallTile);
+                blockingLayer.SetTile(new Vector3Int(mapSize + y - 1, x, 0), roofWallTile); // Левая и правая стена карты
+            }
+        }
+
+        for (int x = 0; x < mapSize; x++)
+        {
+            if (map[x, mapSize - 1] == 0)
+            {
+                blockingLayer.SetTile(new Vector3Int(x, mapSize, 0), sideWallTile);
+            }
+        }
+    }
+
+    // Заполнение объектами
+    void RenderObjects(int[,] map, int mapSize)
+    {
+        for (int x = 0; x < mapSize; x++)
+        {
+            for (int y = 0; y < mapSize; y++)
+            {
+                switch (map[x, y])
+                {
+                    case (int)Content.Floor:
+                        continue;
+                    case (int)Content.RoofWall:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), roofWallTile);
+                        break;
+                    case (int)Content.SideWall:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), sideWallTile);
+                        break;
+                    case (int)Content.ChestTile1:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile1);
+                        break;
+                    case (int)Content.ChestTile2:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile2);
+                        break;
+                    case (int)Content.ChestTile3:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile3);
+                        break;
+                    case (int)Content.ChestTile4:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), chestTile4);
+                        break;
+                    case (int)Content.Enemy1:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile1);
+                        break;
+                    case (int)Content.Enemy2:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile2);
+                        break;
+                    case (int)Content.Enemy3:
+                        blockingLayer.SetTile(new Vector3Int(x, y, 0), enemyTile3);
+                        break;
+                    case (int)Content.Player:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        break;
+                    case (int)Content.EntryTilemap:
+                        entryDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.PlayerAndEntryTilemap:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        entryDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.ExitTilemap:
+                        exitDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    case (int)Content.PlayerAndExitTilemap:
+                        Player.position = new Vector2(x + 0.5f, y);
+                        exitDecorationsLayer.transform.position = new Vector3(x, y);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
