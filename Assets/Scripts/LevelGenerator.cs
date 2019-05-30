@@ -16,6 +16,8 @@ public class LevelGenerator : MonoBehaviour
     private int monstersPerLevel;
     [SerializeField]
     private int chestsPerLevel;
+    [SerializeField]
+    private int percentageOfWallsInRooms; //32
 
     public Tilemap groundLayer;
     public Tilemap blockingLayer;
@@ -36,6 +38,11 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
+    int SetOffset(int i, int delta)
+    {
+        return (((i / 2) + delta) * sizeOfRoom) + ((i / 2) * sizeOfRoad);
+    }
+
     void GenerateLevel(ref int[,] map, int mapSize)
     {
         int mapSchemeSize = rooms * 2 - 1;
@@ -43,6 +50,76 @@ public class LevelGenerator : MonoBehaviour
 
         // Генерация схемы карты
         MapPlan(ref mapScheme);
+        // Заполнение карты Tiles
+        GenerateMap(ref mapScheme, ref map, mapSize, mapSchemeSize);
+    }
+    
+    // Заполнение карты Tiles
+    void GenerateMap(ref int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
+    {
+        // Заполнение комнат
+        GenerateRooms(ref mapScheme, ref map, mapSize, mapSchemeSize);
+    }
+
+    // Заполнение комнат
+    void GenerateRooms(ref int[,] mapScheme, ref int[,] map, int mapSize, int mapSchemeSize)
+    {
+        for (int x = 0; x < mapSchemeSize; x++)
+        {
+            for (int y = 0; y < mapSchemeSize; y++)
+            {
+                if ((x % 2 == 0 && y % 2 == 0))
+                {
+                    GenerateRoomsWall(x, y, ref map);
+                }
+            }
+        }
+    }
+
+    // Заполнение не основных комнат
+    void GenerateRoomsWall(int x, int y, ref int[,] map)
+    {
+        x = SetOffset(x, 0);
+        y = SetOffset(y, 0);
+        // Добавление стен вокруг комнаты
+        for (int k = 0; k < sizeOfRoom - 1; k++)
+        {
+            GenerateRoomsOuterWall(x, y, k + 1, 0, ref map);
+            GenerateRoomsOuterWall(x, y, 0, k, ref map);
+            GenerateRoomsOuterWall(x, y, k, sizeOfRoom - 1, ref map);
+            GenerateRoomsOuterWall(x, y, sizeOfRoom - 1, k + 1, ref map);
+        }
+
+        // Добавление стен внутри комнаты
+        GenerateRoomsInternalWall(x, y, ref map);
+    }
+
+    // Добавление стен вокруг комнаты
+    void GenerateRoomsOuterWall(int offsetX, int offsetY, int deltaX, int deltaY, ref int[,] map)
+    {
+        if (Random.Range(0, 101) > percentageOfWallsInRooms)
+        {
+            map[offsetX + deltaX, offsetY + deltaY] = 0;
+        }
+        else
+        {
+            map[offsetX + deltaX, offsetY + deltaY] = 1;
+        }
+    }
+
+    // Добавление стен внутри комнаты
+    void GenerateRoomsInternalWall(int offsetX, int offsetY, ref int[,] map)
+    {
+        for (int x = 1; x < sizeOfRoom - 1; x++)
+        {
+            for (int y = 1; y < sizeOfRoom - 1; y++)
+            {
+                if (Random.Range(0, 101) <= percentageOfWallsInRooms && map[offsetX + x, offsetY + y] == 0)
+                {
+                    map[offsetX + x, offsetY + y] = 1;
+                }
+            }
+        }
     }
 
     // Генерация схемы карты
