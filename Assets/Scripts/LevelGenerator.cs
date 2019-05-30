@@ -28,6 +28,19 @@ public class LevelGenerator : MonoBehaviour
     public Tilemap entryDecorationsLayer;
     public Tilemap exitDecorationsLayer;
 
+    public Tile floorTile;
+    public Tile sideWallTile;
+    public Tile roofWallTile;
+
+    public Tile enemyTile1;
+    public Tile enemyTile2;
+    public Tile enemyTile3;
+
+    public Tile chestTile1;
+    public Tile chestTile2;
+    public Tile chestTile3;
+    public Tile chestTile4;
+
     enum Content
     {
         Floor = 0,
@@ -59,6 +72,8 @@ public class LevelGenerator : MonoBehaviour
         map = new int[mapSize, mapSize];
         // 
         GenerateLevel(ref map, mapSize);
+        // Воспроизведение карты
+        RenderMap(map, mapSize);
     }
 
     void Update()
@@ -443,6 +458,25 @@ public class LevelGenerator : MonoBehaviour
         if (number == 1 && y != 1)
         {
             roadX = x + deltaX;
+        }
+    }
+
+    // Воспроизведение карты
+    void RenderMap(int[,] map, int mapSize)
+    {
+        // Заполнение карты полом
+        GroundMap(mapSize);
+    }
+
+    // Заполнение карты полом
+    void GroundMap(int mapSize)
+    {
+        for (int x = 0; x < mapSize; x++)
+        {
+            for (int y = 0; y < mapSize; y++)
+            {
+                groundLayer.SetTile(new Vector3Int(x, y, 0), floorTile);
+            }
         }
     }
 }
