@@ -28,6 +28,24 @@ public class LevelGenerator : MonoBehaviour
     public Tilemap entryDecorationsLayer;
     public Tilemap exitDecorationsLayer;
 
+    enum Content
+    {
+        Floor = 0,
+        RoofWall = 1,
+        SideWall = 3,
+
+        ChestTile1 = 11,
+        ChestTile2 = 12,
+        ChestTile3 = 13,
+        ChestTile4 = 14,
+
+        Enemy1 = 21,
+        Enemy2 = 22,
+        Enemy3 = 23,
+
+        Player = 50,
+    }
+
     void Start()
     {
         int mapSize = rooms * sizeOfRoom + (rooms - 1) * sizeOfRoad;
@@ -72,7 +90,8 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int y = 0; y < mapSchemeSize; y++)
             {
-                if ((x % 2 == 0 && y % 2 == 0))
+                // Заполнение не основных комнат
+                if (mapScheme[x + 1, y + 1] == 0 && (x % 2 == 0 && y % 2 == 0))
                 {
                     GenerateRoomsWall(x, y, ref map);
                 }
@@ -92,34 +111,10 @@ public class LevelGenerator : MonoBehaviour
                         GenerateRoadsWall(ref map, x, y, sizeOfRoom, sizeOfRoad, 0, 1, ref mapScheme);
                     }
                 }
-            }
-        }
-    }
-
-    // Заполнение дорог стенами
-    void GenerateRoadsWall(ref int[,] map, int i, int j, int sizeX, int sizeY, int deltaX, int deltaY, ref int[,] mapScheme)
-    {
-        int offsetX = SetOffset(i, deltaX);
-        int offsetY = SetOffset(j, deltaY);
-
-        for (int x = 0; x < sizeX; x++)
-        {
-            for (int y = 0; y < sizeY; y++)
-            {
-                if (mapScheme[i + 1, j + 1] != 0)
+                // Заполнение важных комнат
+                else if (mapScheme[x + 1, y + 1] != 0 && (x % 2 == 0 && y % 2 == 0))
                 {
-                    map[offsetX + x, offsetY + y] = 0;
-                }
-                else
-                {
-                    if (Random.Range(0, 101) > percentageOfWallsInRoads)
-                    {
-                        map[offsetX + x, offsetY + y] = 0;
-                    }
-                    else
-                    {
-                        map[offsetX + x, offsetY + y] = 1;
-                    }
+                    GenerateRoomsWall(x, y, ref map);
                 }
             }
         }
@@ -148,11 +143,11 @@ public class LevelGenerator : MonoBehaviour
     {
         if (Random.Range(0, 101) > percentageOfWallsInBorderOfRooms)
         {
-            map[offsetX + deltaX, offsetY + deltaY] = 0;
+            map[offsetX + deltaX, offsetY + deltaY] = (int)Content.Floor;
         }
         else
         {
-            map[offsetX + deltaX, offsetY + deltaY] = 1;
+            map[offsetX + deltaX, offsetY + deltaY] = (int)Content.RoofWall;
         }
     }
 
@@ -165,7 +160,36 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (Random.Range(0, 101) <= percentageOfWallsInRooms && map[offsetX + x, offsetY + y] == 0)
                 {
-                    map[offsetX + x, offsetY + y] = 1;
+                    map[offsetX + x, offsetY + y] = (int)Content.RoofWall;
+                }
+            }
+        }
+    }
+
+    // Заполнение дорог стенами
+    void GenerateRoadsWall(ref int[,] map, int i, int j, int sizeX, int sizeY, int deltaX, int deltaY, ref int[,] mapScheme)
+    {
+        int offsetX = SetOffset(i, deltaX);
+        int offsetY = SetOffset(j, deltaY);
+
+        for (int x = 0; x < sizeX; x++)
+        {
+            for (int y = 0; y < sizeY; y++)
+            {
+                if (mapScheme[i + 1, j + 1] != 0)
+                {
+                    map[offsetX + x, offsetY + y] = (int)Content.Floor;
+                }
+                else
+                {
+                    if (Random.Range(0, 101) > percentageOfWallsInRoads)
+                    {
+                        map[offsetX + x, offsetY + y] = (int)Content.Floor;
+                    }
+                    else
+                    {
+                        map[offsetX + x, offsetY + y] = (int)Content.RoofWall;
+                    }
                 }
             }
         }
