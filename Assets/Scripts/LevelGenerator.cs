@@ -44,6 +44,12 @@ public class LevelGenerator : MonoBehaviour
         Enemy3 = 23,
 
         Player = 50,
+
+        EntryTilemap = 61,
+        PlayerAndEntryTilemap = 62,
+
+        ExitTilemap = 65,
+        PlayerAndExitTilemap = 66,
     }
 
     void Start()
@@ -114,9 +120,32 @@ public class LevelGenerator : MonoBehaviour
                 // Заполнение важных комнат
                 else if (mapScheme[x + 1, y + 1] != 0 && (x % 2 == 0 && y % 2 == 0))
                 {
-                    GenerateRoomsWall(x, y, ref map);
+                    GenerateEntryAndExitRooms(x, y, ref map);
                 }
             }
+        }
+    }
+
+    // Заполнение важных комнат
+    void GenerateEntryAndExitRooms(int x, int y, ref int[,] map)
+    {
+        int offsetX = SetOffset(x, 0);
+        int offsetY = SetOffset(y, 0);
+        for (int k = 0; k < sizeOfRoom; k++)
+        {
+            for (int m = 0; m < sizeOfRoom; m++)
+            {
+                map[offsetX + k, offsetY + m] = 0;
+            }
+        }
+        if (y > 1)
+        {
+            map[offsetX + 4, offsetY + 6] = (int)Content.Player;
+            map[offsetX, offsetY] = (int)Content.EntryTilemap;
+        }
+        if (y == 0)
+        {
+            map[offsetX, offsetY] = (int)Content.ExitTilemap;
         }
     }
 
