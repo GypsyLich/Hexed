@@ -80,6 +80,8 @@ public class LevelGenerator : MonoBehaviour
         MapPlan(ref mapScheme);
         // Заполнение карты Tiles
         GenerateMap(ref mapScheme, ref map, mapSize, mapSchemeSize);
+        // Добавление "боковых" стен
+        AddSideWalls(ref map, mapSize);
     }
     
     // Заполнение карты Tiles
@@ -215,6 +217,21 @@ public class LevelGenerator : MonoBehaviour
         if (y == 0)
         {
             map[offsetX, offsetY] = (int)Content.ExitTilemap;
+        }
+    }
+
+    // Добавление "боковых" стен
+    void AddSideWalls(ref int[,] map, int mapSize)
+    {
+        for (int x = 0; x < mapSize; x++)
+        {
+            for (int y = 0; y < mapSize - 1; y++)
+            {
+                if (map[x, y] == 0 && map[x, y + 1] == 1)
+                {
+                    map[x, y + 1] = (int)Content.SideWall;
+                }
+            }
         }
     }
 
