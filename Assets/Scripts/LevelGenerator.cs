@@ -18,6 +18,10 @@ public class LevelGenerator : MonoBehaviour
     private int chestsPerLevel;
     [SerializeField]
     private int percentageOfWallsInRooms; //32
+    [SerializeField]
+    private int percentageOfWallsInRoads; //25
+    [SerializeField]
+    private int percentageOfWallsInBorderOfRooms; //75
 
     public Tilemap groundLayer;
     public Tilemap blockingLayer;
@@ -72,6 +76,51 @@ public class LevelGenerator : MonoBehaviour
                 {
                     GenerateRoomsWall(x, y, ref map);
                 }
+                // Заполнение дорог
+                else if ((x % 2 == 1 || y % 2 == 1))
+                {
+                    if (x % 2 == 1 && y % 2 == 1) // Перекресток
+                    {
+                        GenerateRoadsWall(ref map, x, y, sizeOfRoad, sizeOfRoad, 1, 1, ref mapScheme);
+                    }
+                    if (x % 2 == 1 && y % 2 == 0)
+                    {
+                        GenerateRoadsWall(ref map, x, y, sizeOfRoad, sizeOfRoom, 1, 0, ref mapScheme);
+                    }
+                    if (x % 2 == 0 && y % 2 == 1)
+                    {
+                        GenerateRoadsWall(ref map, x, y, sizeOfRoom, sizeOfRoad, 0, 1, ref mapScheme);
+                    }
+                }
+            }
+        }
+    }
+
+    // Заполнение дорог стенами
+    void GenerateRoadsWall(ref int[,] map, int i, int j, int sizeX, int sizeY, int deltaX, int deltaY, ref int[,] mapScheme)
+    {
+        int offsetX = SetOffset(i, deltaX);
+        int offsetY = SetOffset(j, deltaY);
+
+        for (int x = 0; x < sizeX; x++)
+        {
+            for (int y = 0; y < sizeY; y++)
+            {
+                if (mapScheme[i + 1, j + 1] != 0)
+                {
+                    map[offsetX + x, offsetY + y] = 0;
+                }
+                else
+                {
+                    if (Random.Range(0, 101) > percentageOfWallsInRoads)
+                    {
+                        map[offsetX + x, offsetY + y] = 0;
+                    }
+                    else
+                    {
+                        map[offsetX + x, offsetY + y] = 1;
+                    }
+                }
             }
         }
     }
@@ -97,7 +146,7 @@ public class LevelGenerator : MonoBehaviour
     // Добавление стен вокруг комнаты
     void GenerateRoomsOuterWall(int offsetX, int offsetY, int deltaX, int deltaY, ref int[,] map)
     {
-        if (Random.Range(0, 101) > percentageOfWallsInRooms)
+        if (Random.Range(0, 101) > percentageOfWallsInBorderOfRooms)
         {
             map[offsetX + deltaX, offsetY + deltaY] = 0;
         }
